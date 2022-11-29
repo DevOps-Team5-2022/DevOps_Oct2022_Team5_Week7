@@ -12,6 +12,3 @@ def helloworld(input):
     else:
         print("Hello " + input + "! Welcome to Hello World File!");
         return "Hello " + input + "! Welcome to Hello World File!"
- 
-def new():
-    why
