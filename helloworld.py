@@ -10,7 +10,7 @@ def helloworld(input):
         return "Input string too long!"
     elif len(inpr) > 10:
         print("Input string too long!");
-        return "Input string too long"
+        return "Input string too long!"
         
     else:
         print("Hello " + input + "! Welcome to Hello World File!");
