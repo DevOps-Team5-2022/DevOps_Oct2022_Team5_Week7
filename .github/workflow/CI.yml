@@ -1,7 +1,7 @@
 name: CI for Hello World
 
 on:
-  push:
+  commit:
     
 jobs:
   build:
