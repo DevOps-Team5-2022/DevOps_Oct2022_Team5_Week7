@@ -8,13 +8,7 @@ def helloworld(input):
     elif len(input) > 10:
         print("Input string too long!");
         return "Input string too long!"
-    elif len(inpr) > 10:
-        print("Input string too long!");
-        return "Input string too long!
-        
+    
     else:
         print("Hello " + input + "! Welcome to Hello World File!");
         return "Hello " + input + "! Welcome to Hello World File!"
- 
-def new():
-    why
