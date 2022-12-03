@@ -2,6 +2,7 @@ name: CI for Hello World
 
 on:
   push:
+    branches: [main]
     
 jobs:
   build:
@@ -16,11 +17,22 @@ jobs:
     - name: Checkout Own Repo
       uses: actions/checkout@v2
       with:
-        repository: DevOps-Team5-2022/DevOps_Oct2022_Team5_Week6
+        repository: lowkh/DevOps2022Demo
     - name: list our contents
       run: |
         ls
     - name: test with pytest
       run: |
-        pytest test.py -v -cov
-        
+        pytest test.py -v -cov --junitxml=report.xml
+    - if: ${{ failure() }}
+      uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        filename: .github/ISSUE_TEMPLATE.md
+  
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      if: always()
+      with:
+        junit_files: "report.xml"
