@@ -36,9 +36,10 @@ jobs:
       with:
         junit_files: "report.xml"
         
-    - run: mkdir -p path/to/artifact
-
-    - run: echo hello > path/to/artifact/world.txt
+    - name: Make Atrifact directory
+      run: mkdir -p path/to/artifact
+      
+    - run: mv *.xml > path/to/artifact/world.txt
 
     - uses: actions/upload-artifact@v3
       with:
