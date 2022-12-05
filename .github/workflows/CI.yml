@@ -35,7 +35,17 @@ jobs:
       if: always()
       with:
         junit_files: "report.xml"
-        
+    
+    - name: Make directory
+      run: mkdir -p path/to/artifact
+
+    - name: Move file
+      run: mv *.xml path/to/artifact
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: path/to/artifact/world.txt  
     - name: create folder
       run: mkdir downloads
     
@@ -45,5 +55,5 @@ jobs:
     - name: Upload document
       uses: actions/upload-artifact@v2
       with: 
-        name: assetDocuments
-        path: downloads
+        name: my-artifact
+        path: path/to/artifact
