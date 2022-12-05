@@ -39,9 +39,9 @@ jobs:
     - name: Make Atrifact directory
       run: mkdir -p path/to/artifact
       
-    - run: mv *.xml > path/to/artifact/world.txt
+    - run: mv *.xml > path/to/artifact/
 
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/world.txt
+        path: path/to/artifact/
