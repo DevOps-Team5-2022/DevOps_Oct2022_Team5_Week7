@@ -45,15 +45,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/world.txt  
-    - name: create folder
-      run: mkdir downloads
-    
-    - name: move files
-      run: mv *.xml ./downloads
-      
-    - name: Upload document
-      uses: actions/upload-artifact@v2
-      with: 
-        name: my-artifact
-        path: path/to/artifact
+        path: path/to/artifact/  
+
