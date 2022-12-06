@@ -1,5 +1,5 @@
 
-name: CI for Hello World
+name: CDelivery for Hello World
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       run: |
         ls
         
-    - name: send custom message with args
+    - name: send message
       uses: appleboy/discord-action@master
       with:
         webhook_id: ${{ secrets.1049672728912875531 }}
